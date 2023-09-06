@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicío 03 p/ Prof. Jeofton Costa</title>
+    <style>
+        body{
+        background-color: rgb(255, 255, 255);
+        font-family: 'Courier New', Courier, monospace;
+        text-align:center
+        }
+    .box-nav{
+        background-color:rgb(7, 7, 7);
+        padding: 5px;
+        border-radius: 15px;;
+    }
+    .box{
+        background: rgba(0, 0, 0, 0.7) ;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 15px;
+        padding: 15px;
+        color: white;
+    }
+    input{
+        padding: 10px;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        font-size: 15px;
+        width: 50%;
+    }
+ 
+   </style>
+</head>
+<body>
+    <div class="box-nav">
+        <h1 style="color: antiquewhite;">Exibição de dados em tempo real</h1>
+    </div>
+    <div class="box">
+        <p> Escreva uma rotina que receba dados digitados pelo usuário e os exiba em tela a medida que são  digitados </p>
+        <input type="text" id="inputDados" oninput="exibirDadosEmTempoReal()">
+        <div id="dadosExibidos"></div>
+        <br>
+        
+    </div>
+    <script>
+       
+        function exibirDadosEmTempoReal() {
+          
+          var inputElement = document.getElementById("inputDados");
+          var valorDigitado = inputElement.value;
+    
+          
+          var dadosExibidosElement = document.getElementById("dadosExibidos");
+          dadosExibidosElement.textContent = "Dados digitados em tempo real: " + valorDigitado;
+        }
+      </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicío 02 Prof. Jeofton Costa</title>
+    <style>
+        body{
+        background-color: rgb(255, 254, 252);
+        font-family: 'Courier New', Courier, monospace;
+        text-align:center
+        }
+    .box-nav{
+        background-color:rgb(5, 5, 5);
+        padding: 5px;
+        border-radius: 15px;;
+    }
+    .box{
+        background: rgba(0, 0, 0, 0.7) ;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 15px;
+        padding: 15px;
+        color: white;
+    }
+    input{
+        padding: 10px;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        font-size: 15px;
+        width: 50%;
+    }
+    button {
+        padding: 10px;
+        border: none;
+        outline: none;
+        width: 50%;
+        background-color: slateblue;
+        color: white;
+        border-radius: 10px;
+    }
+    button:hover {
+        background-color: cornflowerblue;
+    }
+   </style>
+</head>
+<body>
+    <div class="box-nav">
+        <h1 style="color:antiquewhite">Exercicío 2 </h1>
+    </div>
+    <div class="box">
+        <p>Questão: Escreva uma rotina em JavaScript que receba duas notas do usuário e informe se ele foi aprovado, precisa fazer avaliação ou se está reprovado. </p>
+        <input type="number" id="nota1" placeholder="Digite a primeira nota ">
+        <br>
+        <input type="number" id="nota2" placeholder="Digite a segunda nota">
+        <br>
+        <button onclick="calcularSituacaoAluno()">Enviar</button>
+    </div>
+    <script>
+         function calcularSituacaoAluno() {
+
+            var nota1 = parseInt(document.querySelector('#nota1').value);
+            var nota2 = parseInt(document.querySelector('#nota2').value);
+            var soma = nota1 + nota2;
+            var media = (nota1 + nota2) / 2;
+            console.log('Soma: ' + soma);
+            console.log('Media: ' + media); 
+            if (media >= 7.0) {
+        alert("Parabéns! Você foi aprovado com média " + media.toFixed(1));
+      } else if (media >= 4.0) {
+        alert("Você precisa fazer avaliação com média " + media.toFixed(1));
+      } else {
+        alert("Você está reprovado com média " + media.toFixed(1));
+      }
+      calcularSituacaoAluno();
+   
+    }
+         
+    </script>
+</body>
+</html>
